@@ -20,6 +20,7 @@
         static bool isKittyAlive = true;
 
         static int[] moves;
+
         static char[] arr;
         static char[] movesSeparator = { ' ' };
 
@@ -34,7 +35,7 @@
                 arr[i] = input[i];
             }
 
-            moves = Console.ReadLine().Split(movesSeparator).Select(int.Parse).ToArray();
+            moves = Console.ReadLine().Split(movesSeparator, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
             CollectCollectible();
 
@@ -115,6 +116,7 @@
                         if (inventoryFoods < 1)
                         {
                             isKittyAlive = false;
+                            break;
                         }
 
                         inventoryFoods--;

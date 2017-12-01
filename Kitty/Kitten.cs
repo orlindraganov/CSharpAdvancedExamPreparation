@@ -68,16 +68,14 @@
         {
             var targetPosition = kittyPosition + numberOfSteps;
 
-            while (targetPosition < 0 || arr.Length <= targetPosition)
+            while (targetPosition < 0)
             {
-                if (targetPosition < 0)
-                {
-                    targetPosition += arr.Length;
-                }
-                else if (targetPosition >= arr.Length)
-                {
-                    targetPosition -= arr.Length;
-                }
+                targetPosition += arr.Length;
+            }
+
+            while (targetPosition >= arr.Length)
+            {
+                targetPosition -= arr.Length;
             }
 
             kittyPosition = targetPosition;

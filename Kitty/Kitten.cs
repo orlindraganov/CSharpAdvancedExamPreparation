@@ -35,7 +35,10 @@
                 arr[i] = input[i];
             }
 
-            moves = Console.ReadLine().Split(movesSeparator, StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+            moves = Console.ReadLine()
+                                .Split(movesSeparator, StringSplitOptions.RemoveEmptyEntries)
+                                .Select(int.Parse)
+                                .ToArray();
 
             CollectCollectible();
 
